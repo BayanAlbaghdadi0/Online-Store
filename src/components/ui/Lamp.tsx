@@ -15,7 +15,7 @@ export function LampDemo() {
         }}
         className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
-        Build lamps <br /> the right way
+        AL3M <br /> BAYAN 6y
       </motion.h1>
     </LampContainer>
   );
