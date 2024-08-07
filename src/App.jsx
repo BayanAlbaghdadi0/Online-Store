@@ -1,5 +1,5 @@
 
-import { Landing } from "./components/page/Landing";
+import { Landing } from "./page/Landing";
 
 
 function App() {

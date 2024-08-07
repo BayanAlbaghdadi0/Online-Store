@@ -4,10 +4,10 @@ export const NavBar = () => {
   return (
     <div>
       <div className="drawer z-50">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
-          {/* Navbar */}
-          <div className="navbar bg-base-300 w-full">
+        <input id="my-drawer-3" type="checkbox" className="drawer-toggle  "  />
+        <div className="drawer-content flex flex-col ">
+          {/* Navbarstyle={{background: `rgb(2,0,36)`,backgroundColor: `linear-gradient(137deg, rgba(2,0,36,1) 6%, rgba(44,44,70,1) 75%, rgba(36,154,145,0.8323704481792717) 100%)`}} */}
+          <div className="navbar fixed top-0 opacity-90  w-full bg-slate-950 " >
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -31,7 +31,7 @@ export const NavBar = () => {
             </div>
             <div className="mx-2 flex-1 px-2">logo</div>
             <div className="hidden flex-none lg:block">
-              <ul className="menu menu-horizontal">
+              <ul className="menu menu-horizontal ">
                 {/* Navbar menu content here */}
                 <li>
                   <a>About</a>
@@ -47,13 +47,13 @@ export const NavBar = () => {
           </div>
           {/* Page content here */}
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side ">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
-            className="drawer-overlay"
+            className="drawer-overlay "
           ></label>
-          <ul className="menu bg-base-200 min-h-full w-80 p-4">
+          <ul className="menu bg-base-200 min-h-full p-4 w-1/3">
             {/* Sidebar content here */}
             <li>
               <a>About</a>
