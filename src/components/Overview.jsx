@@ -7,7 +7,7 @@ export const Overview = () => {
         {[0,1,2,3,4,5].map(element =><GlassCard/>)
       }
     </div>
-    <q className='text-3xl '>anguesa❤️</q>
+    <q className='text-3xl'>anguesa❤️</q>
     </>
   )
 }
