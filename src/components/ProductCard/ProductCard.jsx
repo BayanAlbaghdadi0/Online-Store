@@ -1,15 +1,17 @@
 import useGetAllProducts from '../../Hooks/useGetAllProducts';
-const ProductCard = ({ title, price, discount, rating ,thumbnail}) => {
+const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
     const { products, loading } = useGetAllProducts();
     const fixedRating = Math.round(rating)
     const starRating = Array(fixedRating).fill(1)
 
     return (
-        <div className='flex flex-[22%] w-80'>
+        // <div className='flex  w-92 max-w- mt-5'>
 
-            <div className="relative m-10  flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md ">
+
+        // </div>
+            <div className="relative w-80 flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md ">
                 <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-                    <img className="object-cover " src={thumbnail}  alt="product image" />
+                    <img className="object-cover w-72 aspect-square" loading='lazy' src={thumbnail} alt="product image" />
                     <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{discount}% OFF</span>
                 </a>
                 <div className="mt-4 px-5 pb-5">
@@ -19,7 +21,7 @@ const ProductCard = ({ title, price, discount, rating ,thumbnail}) => {
                     <div className="mt-2 mb-5 flex items-center justify-between">
                         <p>
                             <span className="text-3xl font-bold text-white">${price}</span>
-                           
+
                         </p>
                         <div className="flex items-center">
                             {starRating.map((star) => {
@@ -42,10 +44,8 @@ const ProductCard = ({ title, price, discount, rating ,thumbnail}) => {
                     <a href="#" className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 mt-2 ">
 
                         Details</a>
-                </div>
             </div>
-
-        </div>
+                </div>
     )
 }
 
