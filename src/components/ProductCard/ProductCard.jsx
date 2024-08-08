@@ -2,7 +2,6 @@ import useGetAllProducts from '../../Hooks/useGetAllProducts';
 import toast from 'react-hot-toast';
 
 const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
-    const { products, loading } = useGetAllProducts();
     const fixedRating = Math.round(rating)
     const starRating = Array(fixedRating).fill(1)
 
