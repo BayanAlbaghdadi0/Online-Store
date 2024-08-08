@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 export const NavBar = () => {
+  const location = useLocation();
   const navItem = [
     {
       name: "Home",
@@ -46,13 +48,15 @@ export const NavBar = () => {
               <ul className="menu menu-horizontal flex gap-4 ">
                 {/* Navbar menu content here */}
                 {navItem.map(({ name, path, id }) => (
+                  (location.pathname !== path  &&
                   <li key={id}>
                     <Link className="p-0" to={path}>
                       <button class="btn btn-outline btn-primary">
                         {name}
                       </button>
                     </Link>
-                  </li>
+                  </li>)
+
                 ))}
               </ul>
             </div>
@@ -67,13 +71,18 @@ export const NavBar = () => {
           ></label>
           <ul className="menu bg-base-200 min-h-full p-4 w-1/3 flex flex-col gap-2 place-items-center">
             {/* Sidebar content here */}
-            {navItem.map(({ name, path, id }) => (
-              <li key={id}>
-                <Link className="p-0" to={path}>
-                  <button class="btn btn-outline btn-primary">{name}</button>
-                </Link>
-              </li>
-            ))}
+            {navItem.map(
+              ({ name, path, id }) =>
+                location.pathname !== path && (
+                  <li key={id}>
+                    <Link className="p-0" to={path}>
+                      <button className="btn btn-outline btn-primary">
+                        {name}
+                      </button>
+                    </Link>
+                  </li>
+                )
+            )}
           </ul>
         </div>
       </div>
