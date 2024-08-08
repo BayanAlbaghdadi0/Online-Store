@@ -17,9 +17,17 @@ export function LampDemo() {
       >
        Shop easily, Smoothly <br /> <span className="text-purple-500  inline-block mt-6">  And beautifully </span>
       </motion.h1>
-      
-   
-
+      <motion.p
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+      >
+      <p className=" uppercase font-extralight">more than 1000 products</p>
+      </motion.p>
     </LampContainer>
   );
 }

@@ -1,13 +1,25 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const NavBar = () => {
+  const navItem = [
+    {
+      name: "Home",
+      path: "/",
+      id: "1",
+    },
+    {
+      name: "Products",
+      path: "/products",
+      id: "2",
+    },
+  ];
   return (
     <div>
       <div className="drawer z-50">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle  "  />
+        <input id="my-drawer-3" type="checkbox" className="drawer-toggle  " />
         <div className="drawer-content flex flex-col ">
           {/* Navbarstyle={{background: `rgb(2,0,36)`,backgroundColor: `linear-gradient(137deg, rgba(2,0,36,1) 6%, rgba(44,44,70,1) 75%, rgba(36,154,145,0.8323704481792717) 100%)`}} */}
-          <div className="navbar fixed top-0 opacity-90  w-full bg-slate-950 " >
+          <div className="navbar fixed top-0 opacity-90  w-full bg-slate-950 ">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -31,17 +43,17 @@ export const NavBar = () => {
             </div>
             <div className="mx-2 flex-1 px-2">logo</div>
             <div className="hidden flex-none lg:block">
-              <ul className="menu menu-horizontal ">
+              <ul className="menu menu-horizontal flex gap-4 ">
                 {/* Navbar menu content here */}
-                <li>
-                  <a>About</a>
-                </li>
-                <li>
-                  <a>Contact</a>
-                </li>
-                <li>
-                  <a>Prudacts</a>
-                </li>
+                {navItem.map(({ name, path, id }) => (
+                  <li key={id}>
+                    <Link className="p-0" to={path}>
+                      <button class="btn btn-outline btn-primary">
+                        {name}
+                      </button>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -53,17 +65,15 @@ export const NavBar = () => {
             aria-label="close sidebar"
             className="drawer-overlay "
           ></label>
-          <ul className="menu bg-base-200 min-h-full p-4 w-1/3">
+          <ul className="menu bg-base-200 min-h-full p-4 w-1/3 flex flex-col gap-2 place-items-center">
             {/* Sidebar content here */}
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
-            <li>
-              <a>Prudacts</a>
-            </li>
+            {navItem.map(({ name, path, id }) => (
+              <li key={id}>
+                <Link className="p-0" to={path}>
+                  <button class="btn btn-outline btn-primary">{name}</button>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
