@@ -1,4 +1,6 @@
 import useGetAllProducts from '../../Hooks/useGetAllProducts';
+import toast from 'react-hot-toast';
+
 const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
     const { products, loading } = useGetAllProducts();
     const fixedRating = Math.round(rating)
@@ -6,7 +8,7 @@ const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
 
     return (
             <div className="relative w-80 flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md ">
-                <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
+                <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
                     <img className="object-cover w-72 aspect-square" loading='lazy' src={thumbnail} alt="product image" />
                     <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{discount}% OFF</span>
                 </a>
@@ -32,13 +34,12 @@ const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
                             <span className="mr-2 ml-3 rounded bg-yellow-300 px-2.5 py-0.5 text-black text-xs font-semibold">{rating}</span>
                         </div>
                     </div>
-                    <a href="#" className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <a href='' className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300" onClick={()=>{toast.success('Product added successfully')}}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                         Add to cart</a>
-                    <a href="#" className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 mt-2 ">
-
+                    <a href='' className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 mt-2 ">
                         Details</a>
             </div>
                 </div>
