@@ -5,10 +5,6 @@ const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
     const starRating = Array(fixedRating).fill(1)
 
     return (
-        // <div className='flex  w-92 max-w- mt-5'>
-
-
-        // </div>
             <div className="relative w-80 flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md ">
                 <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
                     <img className="object-cover w-72 aspect-square" loading='lazy' src={thumbnail} alt="product image" />

@@ -1,8 +1,9 @@
 import React from "react";
 import { LampDemo } from "./ui/Lamp";
 import { useNavigate } from "react-router-dom";
+
 export const Hero = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <>
       <div className="flex flex-col items-center justify-center relative mt-10">
