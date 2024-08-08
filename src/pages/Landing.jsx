@@ -6,9 +6,11 @@ import { Overview } from '../components/Overview'
 
 export const Landing = () => {
   return (
-    <div className='flex flex-col overflow-y-hidden text-center '>
+    <div className='flex flex-col overflow-y-hidden text-center bg-slate-950'>
+
         <NavBar></NavBar>
         <Hero/>
+
         {/* <Categories/> */}
         <Overview/>
     </div>
