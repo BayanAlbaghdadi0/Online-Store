@@ -6,8 +6,7 @@ import { NavBar } from '../components/layout/NavBar';
 const ProductsPage = () => {
     const [limit, setLimit] = useState(8)
     const [skip, setSkip] = useState(0)
-    // const { products, loading } = useGetAllProducts
-    // (limit, skip);
+
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     console.log(limit, skip);

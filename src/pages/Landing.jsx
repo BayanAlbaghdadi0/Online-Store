@@ -2,6 +2,7 @@ import React from 'react'
 import { NavBar } from '../components/layout/NavBar'
 import { Hero } from '../components/Hero'
 import { Overview } from '../components/Overview'
+import { AboutUS } from '../components/AboutUS'
 // import { Categories } from '../components/Categories'
 
 export const Landing = () => {
@@ -13,6 +14,7 @@ export const Landing = () => {
 
         {/* <Categories/> */}
         <Overview/>
+        <AboutUS/>
     </div>
   )
 }
