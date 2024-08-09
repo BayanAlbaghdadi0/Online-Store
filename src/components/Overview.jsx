@@ -33,7 +33,7 @@ export const Overview = () => {
         </div>
       )}
 
-      <div className=" flex justify-evenly bg-slate-950 flex-wrap gap-4 mb-4">
+      <div className=" flex justify-evenly bg-slate-950 flex-wrap gap-4 mb-4 overflow-x-hidden">
         {/* Category bar */}
         {/* {CARD DISPLAY} */}
         {loading2 && <Lodar />}

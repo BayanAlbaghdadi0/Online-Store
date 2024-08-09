@@ -6,7 +6,7 @@ const ProductCard = ({ title, price, discount, rating, thumbnail }) => {
   const location = useLocation();
 
   return (
-    <div className="relative w-80 flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md ">
+    <div className="relative w-80 flex  w-70 flex-col overflow-hidden rounded-lg  bg-slate-600 shadow-md hover:scale-90 transition-all hover:transition-all ">
       <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
         <img
           className="object-cover w-72 aspect-square"
