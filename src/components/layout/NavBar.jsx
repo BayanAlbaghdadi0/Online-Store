@@ -48,7 +48,7 @@ export const NavBar = () => {
                 {navItem.map(({ name, path, id }) => (
                   <li key={id}>
                     <Link className="p-0" to={path}>
-                      <button class="btn btn-outline btn-primary">
+                      <button class="btn h-1 py-0 btn-outline btn-primary">
                         {name}
                       </button>
                     </Link>
