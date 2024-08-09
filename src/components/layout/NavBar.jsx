@@ -51,7 +51,7 @@ export const NavBar = () => {
                   (location.pathname !== path  &&
                   <li key={id}>
                     <Link className="p-0" to={path}>
-                      <button class="btn h-1 py-0 btn-outline btn-primary">
+                      <button className="btn h-1 py-0 btn-outline btn-primary">
                         {name}
                       </button>
                     </Link>

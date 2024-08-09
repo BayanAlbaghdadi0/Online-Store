@@ -1,35 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavBar } from '../components/layout/NavBar'
 import { useParams } from 'react-router-dom'
 const ProductDetails = () => {
-    const productId = useParams()
-    const [id , setId] = useState(productId.id)
-    const getProductDetails = async () =>{
 
-    }
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    const images = product.images
+    console.log(images);
+
+    const getProductDetails = async () => {
+        try {
+            const res = await fetch(`https://dummyjson.com/products/${id}`);
+            const data = await res.json();
+            setProduct(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        getProductDetails();
+        console.log(product);
+    }, [id]);
     return (
         <div className="font-sans">
-            <NavBar/>
+            <NavBar />
             <div className="p-4 mt-16 text-white lg:max-w-7xl max-w-xl max-lg:mx-auto">
                 <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
                     <div className="min-h-[500px] lg:col-span-3 bg-gradient-to-tr  from-[#F8C794] via-[#FFE0B5] to-[#FFF2D7] rounded-lg w-full lg:sticky top-0 text-center p-6">
-                        <img src="https://readymadeui.com/images/coffee8.webp" alt="Product" className="w-3/5 rounded object-cover mx-auto py-6" />
+                        <img src={product.thumbnail} loading='lazy' alt="Product" className="w-3/5 rounded object-cover mx-auto py-6" />
 
                         <hr className="border-white border my-6" />
 
                         <div className="flex flex-wrap gap-x-4 gap-y-6 justify-center mx-auto">
-                            <div className="w-20 h-20 max-lg:w-16 max-lg:h-16 bg-[#fff2c9] p-3 rounded-lg">
-                                <img src="https://readymadeui.com/images/coffee6.webp" alt="Product1" className="w-full h-full cursor-pointer" />
-                            </div>
-                            <div className="w-20 h-20 max-lg:w-16 max-lg:h-16 bg-[#fff2c9] p-3 rounded-lg">
-                                <img src="https://readymadeui.com/images/coffee3.webp" alt="Product1" className="w-full h-full cursor-pointer" />
-                            </div>
-                            <div className="w-20 h-20 max-lg:w-16 max-lg:h-16 bg-[#fff2c9] p-3 rounded-lg">
-                                <img src="https://readymadeui.com/images/coffee4.webp" alt="Product1" className="w-full h-full cursor-pointer" />
-                            </div>
-                            <div className="w-20 h-20 max-lg:w-16 max-lg:h-16 bg-[#fff2c9] p-3 rounded-lg">
-                                <img src="https://readymadeui.com/images/coffee5.webp" alt="Product1" className="w-full h-full cursor-pointer" />
-                            </div>
+                            {
+                                images && images.length > 0 && images.map((image) => {
+                                    return (
+                                        <div className="w-20 h-20 max-lg:w-16 max-lg:h-16 bg-[#fff2c9] p-3 rounded-lg">
+                                            <img src={image} alt="Product1" loading='lazy' className="w-full h-full cursor-pointer" />
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
 
