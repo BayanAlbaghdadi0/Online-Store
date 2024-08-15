@@ -6,7 +6,7 @@ export const Hero = () => {
   const navigate = useNavigate()
   return (
     <>
-      <div className="flex flex-col items-center justify-center relative mt-10">
+      <div  className="flex flex-col items-center justify-center relative mt-10">
         <LampDemo />
 
         <button

@@ -26,7 +26,7 @@ export const Categories = () => {
       console.log(categories);
 
   return (
-    <div className="bg-slate-950 flex justify-center ">
+    <div id="Categories" className="bg-slate-950 flex justify-center ">
       <ul className="menu menu-vertical lg:menu-horizontal bg-slate-900 opacity-80 rounded-box">
         {categories.map((category) => (
           <li key={category}>

@@ -22,7 +22,7 @@ export const Overview = () => {
       {loading && <Lodar />}
 
       {!loading && (
-        <div className="bg-slate-950 flex justify-center mb-4">
+        <div id="Categories" className="bg-slate-950 flex justify-center mb-4">
           <ul className="menu menu-vertical flex lg:menu-horizontal bg-slate-900 opacity-80 rounded-box">
             {categories.map((category) => (
               <li key={category}>

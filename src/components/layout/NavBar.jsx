@@ -16,9 +16,9 @@ export const NavBar = () => {
     },
   ];
   return (
-    <div>
+    <div id="Hero">
       <div className="drawer z-50">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle  " />
+        <input id="my-drawer-3" type="checkbox" className="drawer-toggle " />
         <div className="drawer-content flex flex-col ">
           {/* Navbarstyle={{background: `rgb(2,0,36)`,backgroundColor: `linear-gradient(137deg, rgba(2,0,36,1) 6%, rgba(44,44,70,1) 75%, rgba(36,154,145,0.8323704481792717) 100%)`}} */}
           <div className="navbar fixed top-0 opacity-90  w-full bg-slate-950 ">
@@ -47,17 +47,18 @@ export const NavBar = () => {
             <div className="hidden flex-none lg:block">
               <ul className="menu menu-horizontal flex gap-4 ">
                 {/* Navbar menu content here */}
-                {navItem.map(({ name, path, id }) => (
-                  (location.pathname !== path  &&
-                  <li key={id}>
-                    <Link className="p-0" to={path}>
-                      <button className="btn h-1 py-0 btn-outline btn-primary">
-                        {name}
-                      </button>
-                    </Link>
-                  </li>)
-
-                ))}
+                {navItem.map(
+                  ({ name, path, id }) =>
+                    location.pathname !== path && (
+                      <li key={id}>
+                        <Link className="p-0" to={path}>
+                          <button className="btn h-1 py-0 btn-outline btn-primary">
+                            {name}
+                          </button>
+                        </Link>
+                      </li>
+                    )
+                )}
               </ul>
             </div>
           </div>
