@@ -4,12 +4,13 @@ export const Footer = () => {
     <div class="w-full min-h-screen flex flex-col items-center justify-center bg-slate-950">
       <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
         <div class="w-full text-7xl font-bold flex justify-center">
-          <h1 class="w-full md:w-2/3">How can we help you. get in touch</h1>
+          <h1 class="w-full md:w-2/3">How can we help you to get in touch</h1>
         </div>
         <div class="flex mt-8 flex-col items-center gap-4  ">
           <p class="w-full md:w-2/3 text-gray-400">
-            To ensure that all Wikipedia content is verifiable, anyone may
-            question an uncited claim. If your work has been tagged
+          To ensure that you have a smooth and comfortable experience or
+           if you have any suggestions, you can now contact us by clicking
+            on the button below.
           </p>
           <div class="w-44 pt-6 md:pt-0">
             <a
@@ -34,8 +35,11 @@ export const Footer = () => {
             >
               Hero
             </a>
-            <a href="#Categories" class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
-            Categories
+            <a
+              href="#Categories"
+              class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase"
+            >
+              Categories
             </a>
             <div class="flex flex-row space-x-8 items-center justify-between">
               <a>
@@ -74,7 +78,6 @@ export const Footer = () => {
                   />
                 </svg>
               </a>
-             
             </div>
           </div>
           <hr class="border-gray-600" />
