@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useGetAllProducts from '../Hooks/useGetAllProducts'
 import ProductCard from '../components/ProductCard/ProductCard';
 import { NavBar } from '../components/layout/NavBar';
-
+import { Lodar } from '../components/Lodar';
 const ProductsPage = () => {
     const [limit, setLimit] = useState(8)
     const [skip, setSkip] = useState(0)
@@ -43,7 +43,9 @@ const ProductsPage = () => {
                 }
                 {
                     loading &&
-                    <span className="loading loading-infinity loading-lg w-40 h-40"></span>
+                    <div className='w-full h-full flex justify-center py-80 items-center'>
+                        <Lodar />
+                    </div>
                 }
             </div>
             {
